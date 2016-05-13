@@ -18,11 +18,7 @@ module.exports = {
 	module: {
 		loaders: [{
 			test: /\.jsx?$/,
-			exclude:/node_modules/,
-			loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=react']
+			loaders: ['babel-loader?presets[]=es2015,presets[]=react']
 		}]
-	},
-	plugins: [
-		new webpack.HotModuleReplacementPlugin()
-	]
+	}
 }

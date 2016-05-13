@@ -1,5 +1,5 @@
 .DS_Store
 Thumbs.db
 /node_modules/
-/build
+/build/bundle.js
 !.editorconfig
