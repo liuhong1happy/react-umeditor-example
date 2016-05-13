@@ -19,6 +19,12 @@ module.exports = {
 		loaders: [{
 			test: /\.jsx?$/,
 			loaders: ['babel-loader?presets[]=es2015,presets[]=react']
-		}]
+		},{
+			test: /\.less$/,
+			loader: 'style!css!less'
+		},{
+    		test: /\.(png|jpg)$/,
+    		loader: 'url?limit=50000'
+    	}]
 	}
 }
