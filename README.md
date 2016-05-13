@@ -1,5 +1,7 @@
 
-这是一个使用 React + Webpack + ES6 进行组合开发的种子项目，最终输出的是一个 Hello World：
+这是一个使用 React + Webpack + ES6 进行组合开发的种子项目，最终输出的是一个 Hello World 。
+
+安装 & 运行：
 
 ```
 git clone https://github.com/huangtengfei/react-webpack-es6.git
