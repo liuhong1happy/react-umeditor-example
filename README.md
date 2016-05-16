@@ -10,6 +10,8 @@ npm install
 npm run dev
 ```
 
+打开 http://localhost:8080 即可看到效果。
+
 完整的创建过程在 [这里][1]。
 
 
