@@ -15,6 +15,9 @@ module.exports = {
 		path: BUILD_PATH,
 		filename: 'bundle.js'
 	},
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
 	module: {
 		loaders: [{
 			test: /\.jsx?$/,

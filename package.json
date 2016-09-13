@@ -1,5 +1,5 @@
 {
-  "name": "react-webpack-es6",
+  "name": "react-umeditor-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "react": "^15.0.2",
     "react-dom": "^15.0.2",

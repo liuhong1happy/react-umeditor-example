@@ -7,7 +7,7 @@ class Hello extends React.Component {
 		this.state = {
 			form_data: {
 				text: "123",
-				editor: "123"
+				editor: "<p>123</p>"
 			}
 		}
 	}
