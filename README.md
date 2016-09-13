@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 这是一个使用 React + Webpack + ES6 进行组合开发的种子项目，最终输出的是一个 Hello World 。
 
@@ -16,3 +17,7 @@ npm run dev
 
 
   [1]: https://github.com/huangtengfei/blog/issues/17
+=======
+# react-umeditor-example
+react-umeditor-example
+>>>>>>> c04715838de4cedd25ddd1456f3ad9d94ef621dd
