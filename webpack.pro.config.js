@@ -9,14 +9,12 @@ var TEM_PATH = path.resolve(__dirname, './templates/index.html');
 
 module.exports = {
 	entry: {
-//		'webpack/hot/dev-server',
-//    	'webpack-dev-server/client?http://localhost:8080',
         app: APP_PATH,
         vendor: ['react', 'react-dom','react-umeditor']
     },	
 	output: {
 		path: BUILD_PATH,
-		filename: '[name].js'
+		filename: '[name].[hash].js'
 	},
     plugins: [
         new webpack.optimize.UglifyJsPlugin({minimize: true}),
@@ -34,12 +32,7 @@ module.exports = {
 			test: /\.jsx?$/,
 			loaders: ['babel'],
             query: {
-                "presets": ["react", "es2015"],
-                "env": {
-                    "development": {
-                        "presets": ["react-hmre"]
-                    }
-                }
+              presets: ['react','es2015']
             }
 		},{
 			test: /\.less$/,
