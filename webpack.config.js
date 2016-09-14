@@ -9,8 +9,6 @@ var TEM_PATH = path.resolve(__dirname, './templates/index.html');
 
 module.exports = {
 	entry: {
-//		'webpack/hot/dev-server',
-//    	'webpack-dev-server/client?http://localhost:8080',
         app: APP_PATH,
         vendor: ['react', 'react-dom','react-umeditor']
     },	
