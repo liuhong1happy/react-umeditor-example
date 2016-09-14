@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-class World extends React.Component {
-	render() {
-		return <h2>ABC</h2>
+class FormIndex extends React.Component {
+	render (){
+		return (<div className="form-index">
+				{this.props.children}
+			</div>)
 	}
 }
 
-ReactDOM.render(<World />, document.getElementById('world'));
+export default FormIndex;
