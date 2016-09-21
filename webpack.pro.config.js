@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(__dirname, './components/index.jsx');
+var APP_PATH = path.resolve(__dirname, './src/index.jsx');
 var BUILD_PATH = path.resolve(__dirname, './build');
 var TEM_PATH = path.resolve(__dirname, './templates/index.html');
 

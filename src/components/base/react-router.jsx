@@ -1,5 +1,5 @@
 "use strict"
-import {Component} from 'react';
+import React from 'react';
 
 const RouteHistory = {
     hashTable:[],
@@ -53,7 +53,7 @@ const RouterUtils = {
     }
 }
 
-class Router extends Component {
+class Router extends React.Component {
     constructor(props) {
 		super(props);
 		this.state = {
@@ -165,7 +165,7 @@ const Route = () => {
   	return (<div></div>);
 }
 
-class Link extends Component {
+class Link extends React.Component {
     handleClick(e){
         var to = this.props.to;
         RouteHistory.pushHash(to);

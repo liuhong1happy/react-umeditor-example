@@ -1,11 +1,11 @@
 import React from 'react';
-import {Router,Route,RouteHistory,Link} from './base/react-router';
-import FormIndex from './form/index';
-import FormBase from './form/base';
-import SampleIndex from './sample/index';
-import SampleBase from './sample/base';
-import SampleIcon from './sample/icon';
-import SampleUpload from './sample/upload';
+import {Router,Route,RouteHistory,Link} from './base/react-router.jsx';
+import FormIndex from './form/index.jsx';
+import FormBase from './form/base.jsx';
+import SampleIndex from './sample/index.jsx';
+import SampleBase from './sample/base.jsx';
+import SampleIcon from './sample/icon.jsx';
+import SampleUpload from './sample/upload.jsx';
 
 class RightNavbar extends React.Component {
 	render () {
@@ -69,4 +69,4 @@ class RouterApp extends React.Component {
 		)
 	}
 }
-export default UmeditorApp;
+export default RouterApp;
