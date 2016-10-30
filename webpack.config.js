@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(__dirname, './src/index.jsx');
@@ -25,14 +26,18 @@ module.exports = {
             filename: 'index.html',
             chunks: ['app', 'vendor'],
             inject: 'body'
-          })
+          }),
+        new OpenBrowserPlugin({
+          url: 'http://localhost:8080'
+          //browser: 'chromium-browser' // mac调试时需要注释该行
+        })
     ],
 	module: {
 		loaders: [{
 			test: /\.jsx?$/,
 			loaders: ['babel'],
             query: {
-                "presets": ["react", "es2015"],
+                "presets": ["react", "es2015",'stage-0'],
                 "env": {
                     "development": {
                         "presets": ["react-hmre"]

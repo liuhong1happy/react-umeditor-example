@@ -18,13 +18,13 @@ class RightNavbar extends React.Component {
 						</div>
 						<ul className="sub-navbar">
 							<li className="nav-item">
-								<Link to="/sample/base" anchor={true}>最简单示例</Link>
+								<Link to="/sample/base" anchor={true} role="button">最简单示例</Link>
 							</li>
 							<li className="nav-item">
-								<Link to="/sample/icon" anchor={true}>自定义功能</Link>
+								<Link to="/sample/icon" anchor={true} role="button">自定义功能</Link>
 							</li>
 							<li className="nav-item">
-								<Link to="/sample/upload" anchor={true}>文件上传</Link>
+								<Link to="/sample/upload" anchor={true} role="button">文件上传</Link>
 							</li>
 						</ul>
 					</li>
@@ -32,7 +32,7 @@ class RightNavbar extends React.Component {
 						<div className="item-title">表单示例</div>
 						<ul className="sub-navbar">
 							<li className="nav-item">
-								<Link to="/form/base" anchor={true}>简单的表单</Link>
+								<Link to="/form/base" anchor={true} role="button">简单的表单</Link>
 							</li>
 						</ul>
 					</li>
