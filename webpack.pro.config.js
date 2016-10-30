@@ -10,7 +10,7 @@ var TEM_PATH = path.resolve(__dirname, './templates/index.html');
 module.exports = {
 	entry: {
         app: APP_PATH,
-        vendor: ['react', 'react-dom','react-umeditor']
+        vendor: ['react', 'react-dom','react-umeditor','similar-react-router']
     },	
 	output: {
 		path: BUILD_PATH,

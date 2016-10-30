@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router,Route,RouteHistory,Link} from './base/react-router.jsx';
+import {Router,Route,RouteHistory,Link} from 'similar-react-router';
 import FormIndex from './form/index.jsx';
 import FormBase from './form/base.jsx';
 import SampleIndex from './sample/index.jsx';

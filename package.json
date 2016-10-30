@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-umeditor": "^0.7.4"
+    "react-umeditor": "^0.7.7",
+    "similar-react-router":"^0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",
