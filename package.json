@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-umeditor": "^0.7.7",
+    "react-umeditor": "^0.8.1",
     "similar-react-router": "^0.1.0"
   },
   "devDependencies": {
