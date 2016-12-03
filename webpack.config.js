@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(__dirname, './src/index.jsx');
 var BUILD_PATH = path.resolve(__dirname, './build');
@@ -18,6 +18,7 @@ module.exports = {
 		filename: '[name].js'
 	},
     plugins: [
+		new CopyWebpackPlugin([{"from": 'src/components', "to": "demo"}]),
         new webpack.optimize.UglifyJsPlugin({minimize: true}),
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
         new HtmlWebpackPlugin({
@@ -48,7 +49,7 @@ module.exports = {
 			test: /\.less$/,
 			loader: ['style','css','less']
 		},{
-    		test: /\.(png|jpg)$/,
+    		test: /\.(png|jpg|gif)$/,
     		loader: 'url?limit=50000'
     	}]
 	}
