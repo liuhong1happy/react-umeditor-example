@@ -7,7 +7,6 @@ class SampleUpload extends React.Component {
 			url:'http://upload.qiniu.com',
 			type:'qiniu',
 			name:"file",
-			request: "url",
 			qiniu:{
 				app:{
 					Bucket:"liuhong1happy",
