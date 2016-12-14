@@ -20,6 +20,13 @@ class FormBase extends React.Component {
 				"horizontal date time  | image formula spechars | inserttable"
 			]
 	}
+	getDefaultUploader(){
+		return {
+			url:'/api/upload',
+			name:"file",
+			request: "url"
+		}
+	}
 	getQiniuUploader(){
 		return {
 			url:'http://upload.qiniu.com',
@@ -56,22 +63,19 @@ class FormBase extends React.Component {
 		alert(form_data.editor);
 	}
 	render() {
-		var icons = this.getIcons();
-		var uploader = this.getQiniuUploader();
-		var plugins = {
+		let icons = this.getIcons();
+		// 调用七牛上传
+		let uploader = this.getQiniuUploader();
+		// 如果你是本地上传，请调用下面这行代码 
+		// var uploader = this.getDefaultUploader();
+		// 注意上传接口的返回值，应该是 {'data': {'image_src': xxx} , 'status':'success'}
+		let plugins = {
 			image:{
 				uploader:uploader
 			}
 		}
-		var count = 100;
-		var editors = [];
-		for(var i=0;i<count;i++){
-			editors.push({
-				icons:icons,
-				plugins:plugins
-			})
-		}
-		var form_data = this.state.form_data;
+
+		let form_data = this.state.form_data;
 		return (<div>
 				<Editor ref="editor" icons={icons} plugins={plugins} value={form_data.editor}/>
 				<input type="text" value={form_data.text} onChange={this.handleFormChange.bind(this)}/>

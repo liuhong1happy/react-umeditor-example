@@ -6,6 +6,7 @@ import SampleIndex from './sample/index.jsx';
 import SampleBase from './sample/base.jsx';
 import SampleIcon from './sample/icon.jsx';
 import SampleUpload from './sample/upload.jsx';
+import SampleMulti from './sample/multi.jsx'
 
 class TopHeader extends React.Component{
 	render(){
@@ -46,7 +47,10 @@ class RightNavbar extends React.Component {
 								<Link className={ hash.indexOf('/sample/icon')!=-1?"active":"" } to="/demo/sample/icon?title=基础示例 > 自定义功能" anchor={true} role="button">自定义功能</Link>
 							</li>
 							<li className="nav-item">
-								<Link className={ hash.indexOf('/sample/upload')!=-1?"active":"" } to="/demo/sample/upload?title=基础示例 > 文件上传" anchor={true} role="button">文件上传</Link>
+								<Link className={ hash.indexOf('/sample/upload')!=-1?"active":"" } to="/demo/sample/upload?title=基础示例 > 文件上传" anchor={true} role="button">图片上传</Link>
+							</li>
+							<li className="nav-item">
+								<Link className={ hash.indexOf('/sample/multi')!=-1?"active":"" } to="/demo/sample/multi?title=基础示例 > 同时渲染更多" anchor={true} role="button">同时渲染更多</Link>
 							</li>
 						</ul>
 					</li>
@@ -84,6 +88,7 @@ class RouterApp extends React.Component {
 					<Route path="base" component={SampleBase}></Route>
 					<Route path="icon" component={SampleIcon}></Route>
 					<Route path="upload" component={SampleUpload}></Route>
+					<Route path="multi" component={SampleMulti}></Route>
 				</Route>
 				<Route path="demo/form" component={FormIndex}>
 					<Route path="base" component={FormBase}></Route>
