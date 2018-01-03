@@ -14,8 +14,9 @@ class SampleIndex extends React.Component {
 	render (){
 		var hash = RouteHistory.curHash.hash;
 		var jsFile = "."+hash.split('?')[0]+".jsx";
+		var title = this.props.title ? decodeURIComponent(this.props.title) : '';
 		return (<div className="sample-index main-content">
-				<h4>{this.props.title}</h4>
+				<h4>{title}</h4>
 				{this.props.children}
 				<h4>源代码<a href={jsFile} target="_blank">here</a></h4>
 				<iframe ref="frame" onLoad={this.handleLoadFrame.bind(this)} src={jsFile} 
