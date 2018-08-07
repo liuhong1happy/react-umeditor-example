@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Editor from 'react-umeditor';
 class PluginUpload extends React.Component {
 	render() {
-		var uploader = this.getQiniuUploader();
 		var plugins = {
 			image:{
 				uploader:{

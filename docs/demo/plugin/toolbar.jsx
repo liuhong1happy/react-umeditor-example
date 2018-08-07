@@ -7,8 +7,16 @@ import EditorSelection from 'react-umeditor/lib/utils/EditorSelection'
 import EditorDOM from 'react-umeditor/lib/utils/EditorDOM'
 
 class PluginUpload extends React.Component {
+	getIcons(){
+		return [
+				"source | undo redo | bold italic underline strikethrough fontborder emphasis | ",
+				"paragraph fontfamily fontsize | superscript subscript | ",
+				"forecolor backcolor | removeformat | insertorderedlist insertunorderedlist | selectall | ",
+				"cleardoc  | indent outdent | justifyleft justifycenter justifyright | touppercase tolowercase | ",
+				"horizontal date time  | image spechars | inserttable | link"
+			]
+	}
 	render() {
-		var uploader = this.getQiniuUploader();
 		var plugins = {
 			image:{
 				uploader:{
@@ -60,7 +68,7 @@ class PluginUpload extends React.Component {
 				}]
 			}
 		}
-		return (<Editor ref="editor" plugins={plugins} />)
+		return (<Editor icons={this.getIcons()} ref="editor" plugins={plugins} />)
 	}
 }
 

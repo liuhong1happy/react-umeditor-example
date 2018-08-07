@@ -106,7 +106,7 @@ class RouterApp extends React.Component {
 					<Route path="icon" component={SampleIcon}></Route>
 					<Route path="multi" component={SampleMulti}></Route>
 				</Route>
-				<Route>
+				<Route path="demo/plugin" component={PluginIndex}>
 					<Route path="upload" component={PluginUpload}></Route>
 					<Route path="toolbar" component={PluginToolbar}></Route>
 				</Route>
