@@ -5,10 +5,10 @@ import FormIndex from './form/index.jsx';
 import FormBase from './form/base.jsx';
 import FormChange from './form/change.jsx';
 
-import SampleIndex from './sample/index.jsx';
-import SampleBase from './sample/base.jsx';
-import SampleIcon from './sample/icon.jsx';
-import SampleMulti from './sample/multi.jsx'
+import SimpleIndex from './simple/index.jsx';
+import SimpleBase from './simple/base.jsx';
+import SimpleIcon from './simple/icon.jsx';
+import SimpleMulti from './simple/multi.jsx'
 
 import PluginIndex from './plugin/index.jsx';
 import PluginUpload from './plugin/upload.jsx';
@@ -19,9 +19,12 @@ class TopHeader extends React.Component{
 		var hash = RouteHistory.curHash.hash;
 
 		return (<div className="top-navbar">
-				<ul className="navbar">
-					<li className="nav-item"> 
-						<a role="button" className={"item-title"+(hash.indexOf("docs")!=-1?" active":"")} >
+				<div className="navbar">
+					<div className="nav-item"> 
+						<a role="button">
+							<div className="header-logo"></div>
+						</a>
+						<a role="button" className={"item-title"+(hash.indexOf("docs")!=-1?" active":"")} title="暂未开放，敬情期待">
 							文档
 						</a>
 						<a role="button" className={"item-title"+(hash.indexOf("demo")!=-1?" active":"")}>
@@ -30,8 +33,8 @@ class TopHeader extends React.Component{
 						<a role="button" className="item-title" href="https://github.com/liuhong1happy/react-umeditor" target="_blank">
 							Github
 						</a>
-					</li>
-				</ul>
+					</div>
+				</div>
 			</div>)
 	}
 }
@@ -43,39 +46,67 @@ class RightNavbar extends React.Component {
 				<ul className="navbar">
 					<li className="nav-item"> 
 						<div className="item-title">
-							基础示例
+							<span className="icon-base"></span>
+							<span className="icon-title">基础示例</span>
 						</div>
 						<ul className="sub-navbar">
-							<li className="nav-item">
-								<Link className={ hash.indexOf('/sample/base')!=-1?"active":"" } to="/demo/sample/base?title=基础示例 > 最简单示例" anchor={true} role="button">最简单示例</Link>
+							<li className={["nav-item", hash.indexOf('/simple/base')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/simple/base?title=基础示例 > 最简单示例" anchor={true} role="button">
+									<span className="icon-simple"></span>
+									<span className="icon-title">最简单示例</span>
+								</Link>
 							</li>
-							<li className="nav-item">
-								<Link className={ hash.indexOf('/sample/icon')!=-1?"active":"" } to="/demo/sample/icon?title=基础示例 > 自定义功能" anchor={true} role="button">自定义功能</Link>
+							<li className={["nav-item", hash.indexOf('/simple/icon')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/simple/icon?title=基础示例 > 自定义功能" anchor={true} role="button">
+									<span className="icon-icons"></span>
+									<span className="icon-title">自定义功能</span>
+								</Link>
 							</li>
-							<li className="nav-item">
-								<Link className={ hash.indexOf('/sample/multi')!=-1?"active":"" } to="/demo/sample/multi?title=基础示例 > 同时渲染更多" anchor={true} role="button">同时渲染更多</Link>
-							</li>
-						</ul>
-					</li>
-					<li className="nav-item"> 
-						<div className="item-title">插件示例</div>
-						<ul className="sub-navbar">
-							<li className="nav-item">
-								<Link className={ hash.indexOf('/plugin/upload')!=-1?"active":"" } to="/demo/plugin/upload?title=插件示例 > 文件上传" anchor={true} role="button">图片上传</Link>
-							</li>
-							<li className="nav-item">
-								<Link className={ hash.indexOf('/plugin/toolbar')!=-1?"active":"" } to="/demo/plugin/toolbar?title=插件示例 > 自定义功能按钮" anchor={true} role="button">自定义功能按钮</Link>
+							<li className={["nav-item", hash.indexOf('/simple/multi')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/simple/multi?title=基础示例 > 同时渲染更多" anchor={true} role="button">
+									<span className="icon-more"></span>
+									<span className="icon-title">同时渲染更多</span>
+								</Link>
 							</li>
 						</ul>
 					</li>
 					<li className="nav-item"> 
-						<div className="item-title">表单示例</div>
+						<div className="item-title">
+							<span className="icon-plugin"></span>
+							<span className="icon-title">插件示例</span>
+						</div>
 						<ul className="sub-navbar">
-							<li className="nav-item">
-								<Link className={ hash.indexOf('/form/base')!=-1?"active":"" } to="/demo/form/base?title=表单示例 > 简单的表单" anchor={true} role="button">简单的表单</Link>
+							<li className={["nav-item", hash.indexOf('/plugin/upload')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/plugin/upload?title=插件示例 > 文件上传" anchor={true} role="button">
+									<span className="icon-upload"></span>
+									<span className="icon-title">图片上传</span>
+								</Link>
 							</li>
-							<li className="nav-item">
-								<Link className={ hash.indexOf('/form/change')!=-1?"active":"" } to="/demo/form/change?title=表单示例 > 内容更改事件" anchor={true} role="button">内容更改事件</Link>
+							<li className={["nav-item", hash.indexOf('/plugin/toolbar')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/plugin/toolbar?title=插件示例 > 自定义功能按钮" anchor={true} role="button">
+									<span className="icon-link"></span>
+									<span className="icon-title">自定义功能按钮</span>
+								</Link>
+							</li>
+						</ul>
+					</li>
+					<li className="nav-item"> 
+						<div className="item-title">
+							<span className="icon-form"></span>
+							<span className="icon-title">表单示例</span>
+						</div>
+						<ul className="sub-navbar">
+							<li className={["nav-item", hash.indexOf('/form/base')!=-1?"active":""].join(" ") }>
+								<Link to="/demo/form/base?title=表单示例 > 简单的表单" anchor={true} role="button">
+									<span className="icon-simple-form"></span>
+									<span className="icon-title">简单的表单</span>
+								</Link>
+							</li>
+							<li className={["nav-item", hash.indexOf('/form/change')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/form/change?title=表单示例 > 内容更改事件" anchor={true} role="button">
+									<span className="icon-change-form"></span>
+									<span className="icon-title">内容更改事件</span>
+								</Link>
 							</li>
 						</ul>
 					</li>
@@ -100,11 +131,11 @@ class UmeditorApp extends React.Component {
 class RouterApp extends React.Component {
 	render(){
 		return (
-			<Router defaultRoute="/demo/sample/base" path="/" component={UmeditorApp}>
-				<Route path="demo/sample" component={SampleIndex}>
-					<Route path="base" component={SampleBase}></Route>
-					<Route path="icon" component={SampleIcon}></Route>
-					<Route path="multi" component={SampleMulti}></Route>
+			<Router defaultRoute="/demo/simple/base" path="/" component={UmeditorApp}>
+				<Route path="demo/simple" component={SimpleIndex}>
+					<Route path="base" component={SimpleBase}></Route>
+					<Route path="icon" component={SimpleIcon}></Route>
+					<Route path="multi" component={SimpleMulti}></Route>
 				</Route>
 				<Route path="demo/plugin" component={PluginIndex}>
 					<Route path="upload" component={PluginUpload}></Route>

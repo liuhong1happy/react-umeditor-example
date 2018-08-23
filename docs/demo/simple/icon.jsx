@@ -1,7 +1,7 @@
 import React from 'react';
 import Editor from 'react-umeditor';
 
-class SampleIcons extends React.Component {
+class SimpleIcons extends React.Component {
 	getIcons(){
 		return [
 				"source | undo redo | bold italic underline strikethrough fontborder | ",
@@ -17,4 +17,4 @@ class SampleIcons extends React.Component {
 	}
 }
 
-export default SampleIcons;
+export default SimpleIcons;

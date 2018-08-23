@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?tzuel5');
+  src:  url('fonts/icomoon.eot?tzuel5#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?tzuel5') format('truetype'),
+    url('fonts/icomoon.woff?tzuel5') format('woff'),
+    url('fonts/icomoon.svg?tzuel5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-base:before {
+  content: "\e917";
+}
+.icon-plugin:before {
+  content: "\e918";
+}
+.icon-form:before {
+  content: "\e919";
+}
+.icon-simple:before {
+  content: "\e924";
+}
+.icon-icons:before {
+  content: "\e926";
+}
+.icon-upload:before {
+  content: "\e927";
+}
+.icon-more:before {
+  content: "\e92c";
+}
+.icon-link:before {
+  content: "\e9cb";
+}
+.icon-simple-form:before {
+  content: "\ea90";
+}
+.icon-change-form:before {
+  content: "\ea91";
+}

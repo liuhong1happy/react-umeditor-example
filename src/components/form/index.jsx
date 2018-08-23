@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {RouteHistory} from 'similar-react-router';
 
-class SampleIndex extends React.Component {
+class SimpleIndex extends React.Component {
 	handleLoadFrame(){
 		var frame = ReactDOM.findDOMNode(this.refs.frame);
 		frame.contentDocument.body.innerHTML += '<style>pre{tab-size:2;}</style>';
@@ -15,7 +15,7 @@ class SampleIndex extends React.Component {
 		var hash = RouteHistory.curHash.hash;
 		var jsFile = "."+hash.split('?')[0]+".jsx";
 		var title = this.props.title ? decodeURIComponent(this.props.title) : '';
-		return (<div className="sample-index main-content">
+		return (<div className="simple-index main-content">
 				<h4>{title}</h4>
 				{this.props.children}
 				<h4>源代码<a href={jsFile} target="_blank">here</a></h4>
@@ -25,4 +25,4 @@ class SampleIndex extends React.Component {
 	}
 }
 
-export default SampleIndex;
+export default SimpleIndex;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Editor from 'react-umeditor';
 
-class SampleMulti extends React.Component {
+class SimpleIcons extends React.Component {
 	getIcons(){
 		return [
 				"source | undo redo | bold italic underline strikethrough fontborder | ",
@@ -12,33 +12,9 @@ class SampleMulti extends React.Component {
 			]
 	}
 	render() {
-		let icons = this.getIcons();
-		let plugins = {
-			image:{
-				uploader:{
-					url:'/upload',
-					name:"file",
-					filter:(res)=> res.url
-				}
-			}
-		}
-		let count = 100;
-		let editors = [];
-		for(let i=0;i<count;i++){
-			editors.push({
-				icons: icons,
-				plugins: plugins
-			})
-		}
-
-		return (<div>
-				{
-					editors.map(function(ele,pos){
-						return (<Editor key={pos} icons={ele.icons} plugins={ele.plugins} />)
-					})
-				}
-			 </div>)
+		var icons = this.getIcons();
+		return (<Editor ref="editor" icons={icons} />)
 	}
 }
 
-export default SampleMulti;
+export default SimpleIcons;

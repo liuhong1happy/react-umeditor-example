@@ -1,4 +1,6 @@
-import IndexLess from '../less/index.less';
+import './less/index.less';
+import './icomoon/style.css';
+
 import UmeditorApp from './components/app.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
