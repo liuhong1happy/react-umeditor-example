@@ -1,5 +1,5 @@
-import './less/index.less';
-import './icomoon/style.css';
+import './assets/less/index.less';
+import './assets/icomoon/style.css';
 
 import UmeditorApp from './components/app.jsx';
 import React from 'react';

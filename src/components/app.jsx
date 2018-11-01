@@ -13,6 +13,7 @@ import SimpleMulti from './simple/multi.jsx'
 import PluginIndex from './plugin/index.jsx';
 import PluginUpload from './plugin/upload.jsx';
 import PluginToolbar from './plugin/toolbar.jsx';
+import PluginFormula from './plugin/formula.jsx';
 
 class TopHeader extends React.Component{
 	render(){
@@ -88,6 +89,12 @@ class RightNavbar extends React.Component {
 									<span className="icon-title">自定义功能按钮</span>
 								</Link>
 							</li>
+							<li className={["nav-item", hash.indexOf('/plugin/formula')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/plugin/formula?title=插件示例 > 公式编辑" anchor={true} role="button">
+									<span className="icon-link"></span>
+									<span className="icon-title">公式编辑</span>
+								</Link>
+							</li>
 						</ul>
 					</li>
 					<li className="nav-item"> 
@@ -140,6 +147,7 @@ class RouterApp extends React.Component {
 				<Route path="demo/plugin" component={PluginIndex}>
 					<Route path="upload" component={PluginUpload}></Route>
 					<Route path="toolbar" component={PluginToolbar}></Route>
+					<Route path="formula" component={PluginFormula}></Route>
 				</Route>
 				<Route path="demo/form" component={FormIndex}>
 					<Route path="base" component={FormBase}></Route>

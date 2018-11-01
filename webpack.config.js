@@ -50,7 +50,11 @@ module.exports = {
     }
   },
   plugins: [
-		new CopyWebpackPlugin([{"from": 'src/components', "to": "demo"}]),
+		new CopyWebpackPlugin([
+			{"from": 'src/components', "to": "demo"},
+			{"from": 'src/assets/mathquill', "to": "assets/mathquill"},
+			{"from": 'src/assets/js', "to": "assets/js"}
+		]),
 		new ExtractTextPlugin({
 			filename: 'build.min.css',
 			allChunks: true,
