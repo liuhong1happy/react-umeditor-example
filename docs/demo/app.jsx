@@ -12,6 +12,7 @@ import SimpleMulti from './simple/multi.jsx'
 
 import PluginIndex from './plugin/index.jsx';
 import PluginUpload from './plugin/upload.jsx';
+import PluginQiniu from './plugin/qiniu.jsx'
 import PluginToolbar from './plugin/toolbar.jsx';
 import PluginFormula from './plugin/formula.jsx';
 
@@ -83,6 +84,12 @@ class RightNavbar extends React.Component {
 									<span className="icon-title">图片上传</span>
 								</Link>
 							</li>
+							<li className={["nav-item", hash.indexOf('/plugin/qiniu')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/plugin/qiniu?title=插件示例 > 文件上传" anchor={true} role="button">
+									<span className="icon-upload"></span>
+									<span className="icon-title">七牛上传</span>
+								</Link>
+							</li>
 							<li className={["nav-item", hash.indexOf('/plugin/toolbar')!=-1?"active":""].join(" ")}>
 								<Link to="/demo/plugin/toolbar?title=插件示例 > 自定义功能按钮" anchor={true} role="button">
 									<span className="icon-link"></span>
@@ -146,6 +153,7 @@ class RouterApp extends React.Component {
 				</Route>
 				<Route path="demo/plugin" component={PluginIndex}>
 					<Route path="upload" component={PluginUpload}></Route>
+					<Route path="qiniu" component={PluginQiniu}></Route>
 					<Route path="toolbar" component={PluginToolbar}></Route>
 					<Route path="formula" component={PluginFormula}></Route>
 				</Route>
