@@ -4,6 +4,7 @@ import {Router,Route,RouteHistory,Link} from 'similar-react-router';
 import FormIndex from './form/index.jsx';
 import FormBase from './form/base.jsx';
 import FormChange from './form/change.jsx';
+import FormMulti from './form/multi.jsx';
 
 import SimpleIndex from './simple/index.jsx';
 import SimpleBase from './simple/base.jsx';
@@ -122,6 +123,12 @@ class RightNavbar extends React.Component {
 									<span className="icon-title">内容更改事件</span>
 								</Link>
 							</li>
+							<li className={["nav-item", hash.indexOf('/form/multi')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/form/multi?title=表单示例 > 同时渲染更多" anchor={true} role="button">
+									<span className="icon-more"></span>
+									<span className="icon-title">同时渲染更多</span>
+								</Link>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -160,6 +167,7 @@ class RouterApp extends React.Component {
 				<Route path="demo/form" component={FormIndex}>
 					<Route path="base" component={FormBase}></Route>
 					<Route path="change" component={FormChange}></Route>
+					<Route path="multi" component={FormMulti}></Route>
 				</Route>
 			</Router>
 		)
