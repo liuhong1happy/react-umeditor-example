@@ -4,6 +4,7 @@ import {Router,Route,RouteHistory,Link} from 'similar-react-router';
 import FormIndex from './form/index.jsx';
 import FormBase from './form/base.jsx';
 import FormChange from './form/change.jsx';
+import FormMulti from './form/multi.jsx';
 
 import SimpleIndex from './simple/index.jsx';
 import SimpleBase from './simple/base.jsx';
@@ -12,6 +13,7 @@ import SimpleMulti from './simple/multi.jsx'
 
 import PluginIndex from './plugin/index.jsx';
 import PluginUpload from './plugin/upload.jsx';
+import PluginQiniu from './plugin/qiniu.jsx'
 import PluginToolbar from './plugin/toolbar.jsx';
 import PluginFormula from './plugin/formula.jsx';
 
@@ -83,6 +85,12 @@ class RightNavbar extends React.Component {
 									<span className="icon-title">图片上传</span>
 								</Link>
 							</li>
+							<li className={["nav-item", hash.indexOf('/plugin/qiniu')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/plugin/qiniu?title=插件示例 > 文件上传" anchor={true} role="button">
+									<span className="icon-upload"></span>
+									<span className="icon-title">七牛上传</span>
+								</Link>
+							</li>
 							<li className={["nav-item", hash.indexOf('/plugin/toolbar')!=-1?"active":""].join(" ")}>
 								<Link to="/demo/plugin/toolbar?title=插件示例 > 自定义功能按钮" anchor={true} role="button">
 									<span className="icon-link"></span>
@@ -113,6 +121,12 @@ class RightNavbar extends React.Component {
 								<Link to="/demo/form/change?title=表单示例 > 内容更改事件" anchor={true} role="button">
 									<span className="icon-change-form"></span>
 									<span className="icon-title">内容更改事件</span>
+								</Link>
+							</li>
+							<li className={["nav-item", hash.indexOf('/form/multi')!=-1?"active":""].join(" ")}>
+								<Link to="/demo/form/multi?title=表单示例 > 同时渲染更多" anchor={true} role="button">
+									<span className="icon-more"></span>
+									<span className="icon-title">同时渲染更多</span>
 								</Link>
 							</li>
 						</ul>
@@ -146,12 +160,14 @@ class RouterApp extends React.Component {
 				</Route>
 				<Route path="demo/plugin" component={PluginIndex}>
 					<Route path="upload" component={PluginUpload}></Route>
+					<Route path="qiniu" component={PluginQiniu}></Route>
 					<Route path="toolbar" component={PluginToolbar}></Route>
 					<Route path="formula" component={PluginFormula}></Route>
 				</Route>
 				<Route path="demo/form" component={FormIndex}>
 					<Route path="base" component={FormBase}></Route>
 					<Route path="change" component={FormChange}></Route>
+					<Route path="multi" component={FormMulti}></Route>
 				</Route>
 			</Router>
 		)
