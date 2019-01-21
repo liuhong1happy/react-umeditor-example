@@ -55,12 +55,12 @@ class PluginUpload extends React.Component {
 					},
 					mapRangeState: (rangeState, selection)=> {
 						var parentElement = selection.range.startContainer.parentNode;
-						rangeState["link"] = { active:false, icon:"link"}
+						rangeState["custom-link"] = { active:false, icon:"custom-link", name: 'custom-link'}
 						while((parentElement.tagName || parentElement.nodeName).toUpperCase()!="DIV"){
 							var tagName = parentElement.tagName || parentElement.nodeName;
 							switch(tagName.toUpperCase()){
 								case "A":
-									rangeState["link"] = { active:true,icon:"link"}
+									rangeState["custom-link"] = { active:true, icon:"custom-link", name: 'custom-link' }
 									break;
 							}
 							parentElement = parentElement.parentNode;
